@@ -23,14 +23,15 @@ function initialLoad(widthHeight = 100){
         for (let n = 0; n < widthHeightBlocks; n++){
             const block = document.createElement('div');
             block.classList.add("block");
+            block.addEventListener("click", () => {
+                block.style.opacity -= "-" + pressureSensitivity;
+                block.style.backgroundColor = color;
+            })
             block.addEventListener("mouseover", (e) => {
                 
                 if (e.buttons == 1){ //if mouse click is down
-                    block.style.opacity -= '-0.2';
-
+                    block.style.opacity -= "-" + pressureSensitivity;
                     block.style.backgroundColor = color;
-                
-                //block. += 0.1;
                 }
             })
             let vWidth = 98 / widthHeightBlocks; // used with 98 viewport width
@@ -58,7 +59,12 @@ function changeColor(e){
     color = e.target.value;
 }
 
+function changeSensitivity(e){
+    pressureSensitivity = e.target.value / 100;
+}
+
 
 document.getElementById("newButton").addEventListener("click", changeGrid);
 document.getElementById("color").addEventListener("input", changeColor);
+document.getElementById("pressure").addEventListener("input", changeSensitivity)
 changeGrid();
