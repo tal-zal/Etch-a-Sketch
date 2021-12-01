@@ -1,3 +1,7 @@
+.header {
+    display: flex;
+}
+
 .container {
     border: solid blue 2px;
     display: flex;
@@ -15,7 +19,3 @@
     opacity: 0;
 }
 
-.hoverOver {
-    background-color: black;
-    opacity: 1;
-}
