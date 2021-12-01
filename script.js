@@ -21,7 +21,9 @@ function initialLoad(widthHeight = 16){
             const block = document.createElement('div');
             block.classList.add("block");
             block.addEventListener("mouseover", () => {
-                block.classList.add("hoverOver")
+                //block.classList.add("hoverOver");
+                block.style.opacity -= '-0.1';
+                //block. += 0.1;
             })
             let vWidth = 98 / widthHeightBlocks; // used with 98 viewport width
             let vHeight = 90 / widthHeightBlocks; // used with 90 viewport height
@@ -35,14 +37,11 @@ function initialLoad(widthHeight = 16){
 }
 
 function changeGrid(){
-    
     let widthHeight = prompt("What width and height grid do you want?")
-
     if (widthHeight > 100 || widthHeight < 1){
         alert("Number must be between 1 and 100!")
         return;
     }
-
     removeGrid();
     initialLoad(widthHeight);
 }

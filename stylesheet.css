@@ -10,6 +10,12 @@
 
 }
 
+.block {
+    background-color: black;
+    opacity: 0;
+}
+
 .hoverOver {
     background-color: black;
+    opacity: 1;
 }
