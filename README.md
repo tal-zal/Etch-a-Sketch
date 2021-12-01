@@ -1,2 +1,1 @@
-# Etch-a-Sketch
-
+Microsoft-Paint style web app
